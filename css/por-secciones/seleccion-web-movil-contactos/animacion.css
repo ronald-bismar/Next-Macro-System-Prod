@@ -1,0 +1,22 @@
+.img-celulares {
+  transition: all ease 0.5s;
+}
+.cajaP:hover + .img-celulares .imagen-principal {
+  transform: translateX(-20px);
+  opacity: 0;
+}
+
+.cajaP:hover + .img-celulares .contenedor-imagenes {
+  transform: translate(0px, -10px);
+  opacity: 1;
+}
+.cajaP figure {
+  transition: all 250ms;
+}
+
+figure button:hover {
+  transform: translateY(5px);
+}
+.cajaP figure:hover {
+  cursor: pointer;
+}

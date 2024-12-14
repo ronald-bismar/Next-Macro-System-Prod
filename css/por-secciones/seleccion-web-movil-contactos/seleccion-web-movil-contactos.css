@@ -1,0 +1,165 @@
+#img-celulares {
+  height: 100%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  position: relative;
+}
+#img-celulares img {
+  width: 80%;
+  transition: all ease 0.5s;
+}
+
+/* Configuracion de imagen cuando se hará hover */
+.contenedor-imagenes {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+  position: absolute;
+  inset: 0 0 0 0;
+  gap: 20px;
+  transform: translateX(-20px);
+  transition: all ease 0.5s;
+  opacity: 0;
+}
+#img-celulares .contenedor-imagenes img:nth-child(1) {
+  height: 68%;
+}
+#img-celulares .contenedor-imagenes img {
+  border-radius: 10px;
+  height: 70%;
+  width: auto;
+  transform: rotateX(15deg) rotateY(30deg) rotateZ(-15deg) translateX(50px);
+  box-shadow: -10px 5px 10px #d7d7d7;
+}
+.cajaP {
+  cursor: pointer;
+}
+.cajaP figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+}
+
+figure p {
+  font-size: 1rem;
+  font-weight: 400;
+}
+figure button {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+  padding: 5px 50px;
+  border-style: none;
+  background-color: rgb(255, 85, 85);
+  border-radius: 5px;
+  color: white;
+  transition: 0.3s;
+}
+
+/* Contactos o cotizaciones 2 */
+.contenedor-texto div {
+  margin: 0 auto;
+}
+.contenedor-texto div img {
+  width: 80px;
+  height: auto;
+}
+.cotizaciones2 {
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 85%);
+  clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 85%);
+  background: linear-gradient(
+    180deg,
+    var(--gradient-color-light),
+    var(--gradient-color-dark)
+  );
+  height: 120vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cotizaciones2 {
+  column-gap: 50px;
+}
+.cotizaciones2 img {
+  height: 40rem;
+  width: auto;
+}
+.cotizaciones2 p {
+  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+}
+.cotizaciones2 .contenedor-texto {
+  background-color: aliceblue;
+  width: 25rem;
+  transform: translateY(-40px);
+  border-radius: 5px;
+  padding: 30px;
+}
+.cotizaciones2 .contenedor-texto p {
+  margin-left: 1.4rem;
+}
+.fa-circle-check {
+  color: rgb(0, 197, 0);
+  font-size: 1.2rem;
+  margin-right: 4px;
+}
+
+.cotizaciones2 div button {
+  padding: 5px 50px;
+  border-style: none;
+  border-radius: 6px;
+  background-color: rgb(255, 186, 74);
+  color: black;
+  font-size: 1.1rem;
+  font-weight: 400;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+.cotizaciones2 div button:hover {
+  background-color: rgb(255, 134, 82);
+  color: white;
+  box-shadow: 5px 5px 10px rgb(0, 65, 130);
+}
+@media (max-width: 564px) {
+  .cotizaciones2 .contenedor-texto {
+    width: 90%;
+  }
+  .cotizaciones2 img.imagen-mac-book {
+    display: none;
+  }
+  .cotizaciones2 {
+    height: auto;
+  }
+  .cotizaciones2 .contenedor-texto {
+    margin-block: 100px;
+  }
+}
+@media (max-width: 768px) {
+  .cotizaciones2 {
+    height: 120vh;
+  }
+  .cotizaciones2 img {
+    height: 80vh;
+  }
+}
+@media (max-width: 1200px) {
+  #img-celulares {
+    justify-content: center;
+  }
+  .cotizaciones2 {
+    height: auto;
+  }
+  .contenedor-texto {
+    margin-top: 10%;
+  }
+  .cotizaciones2 img.imagen-mac-book {
+    width: 90vh;
+    margin-bottom: 20%;
+  }
+}

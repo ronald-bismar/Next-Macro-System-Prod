@@ -1,0 +1,93 @@
+:root {
+  --gradient-color-contact-light: #ffbb001f;
+  --gradient-color-contact-dark: #3a83bb5b;
+}
+.tipos_de_programas {
+  font-family: OpenSans-Medium;
+  color: #3a83bb;
+  text-align: center;
+}
+.tipos_de_aplicacion {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.tipos_de_aplicacion h3 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.tipos_de_aplicacion p {
+  height: auto;
+}
+.tipos_de_aplicacion img {
+  margin-top: 40px;
+  height: 100px;
+}
+.app {
+  width: 40%;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.icon_type {
+  position: relative;
+}
+
+.icon_t {
+  position: absolute;
+  transform: translate(-69px, 70px);
+  color: #3a83bb;
+  font-size: 35px;
+}
+
+/* seccion contacto */
+.seccion_contacto {
+  background: url(../../../img/attachment-1.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  height: 350px;
+  margin-block: 50px;
+}
+.seccion_contacto .contenedor-texto {
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    var(--gradient-color-contact-light) 20%,
+    var(--gradient-color-contact-dark) 80%
+  );
+}
+.contenedor-texto button {
+  color: white;
+  border-style: none;
+  background-color: #ffbb00;
+  padding: 10px 30px 10px 30px;
+  border-radius: 10px;
+  margin-top: 30px;
+  font-weight: 500;
+  transition: all ease 0.5s;
+}
+.contenedor-texto button:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 0px 20px #343333;
+}
+@media (max-width: 768px) {
+  .tipos_de_aplicacion {
+    flex-direction: column;
+    height: auto;
+  }
+  .tipos_de_aplicacion h3 {
+    width: 90vw;
+  }
+  .tipos_de_aplicacion p {
+    width: 80vw;
+  }
+}
+@media (max-width: 574) {
+  .app img {
+    margin-top: 500px;
+  }
+}

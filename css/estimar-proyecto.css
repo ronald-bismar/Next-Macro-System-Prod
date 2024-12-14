@@ -1,0 +1,307 @@
+:root {
+  --bg-color-estimar: #00b5bc;
+  --color-1: #4ea4e5;
+  --color-2: linear-gradient(45deg, #026780, #5971a7);
+  --color-3: #0643a0;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  position: relative;
+}
+
+.container-fluid {
+  min-height: 100vh;
+  height: auto;
+  background: var(--color-2);
+  z-index: -1;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 400px;
+  width: 100%;
+}
+.container .steps {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.steps .circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  color: #999;
+  font-size: 22px;
+  font-weight: 500;
+  border-radius: 50%;
+  background: #fff;
+  border: 4px solid #e0e0e0;
+  transition: all 200ms ease;
+  transition-delay: 0s;
+  z-index: 1;
+}
+.steps .circle.active {
+  transition-delay: 0.4s;
+  border-color: #4070f4;
+  color: #4070f4;
+}
+.steps .progress-bar {
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: #e0e0e0;
+  z-index: 0;
+}
+.progress-bar .indicator {
+  position: absolute;
+  height: 100%;
+  width: 0%;
+  background: #4070f4;
+  transition: all 0.9s ease;
+}
+.container .buttons {
+  display: flex;
+  gap: 20px;
+}
+.buttons button {
+  width: 120px;
+  height: 40px;
+  background: #4070f4;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.09);
+  transition: all 200ms linear;
+}
+.buttons button:active {
+  transform: scale(0.97);
+}
+.buttons button:disabled {
+  background: #87a5f8;
+  cursor: not-allowed;
+}
+
+/* ------------------------- */
+#tituloPrincipal {
+  transition: all ease 0.5s;
+  color: whitesmoke;
+}
+.slider {
+  overflow: hidden;
+}
+.slider--inner {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  transition: all 1s ease;
+}
+.slider-divs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.slider-divs div .check {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  border-radius: 5px;
+}
+/* ------------------- */
+.imagenes-referencia .check {
+  display: flex;
+  position: relative;
+  background: lightgrey;
+  background: linear-gradient(145deg, #ffffff, #e3e3e3);
+  box-shadow: 2px 3px 10px #272727;
+}
+.imagenes-referencia .check .opcion {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 30px;
+  height: 30px;
+}
+
+.icon {
+  width: 60%;
+  height: auto;
+}
+
+/* --Boton de pasar siguiente */
+.controles {
+  position: relative;
+}
+
+.check:hover {
+  transition: all ease 0.2s;
+  cursor: pointer;
+  transform: scale(0.99);
+}
+
+.btn-cambiar {
+  position: absolute;
+  height: 40px;
+  width: 120px;
+  background: #4070f4;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+  transition: all 200ms linear;
+}
+
+#enviar-detalles {
+  right: 30px;
+  bottom: 0px;
+  display: none;
+  background-color: rgb(0, 114, 190);
+}
+
+#volver-atras {
+  top: 30px;
+  left: 30px;
+}
+
+/* Estilos modal de aviso */
+.modal {
+  position: fixed;
+  background-color: #33333340;
+  inset: 0 0 0 0;
+  display: flex;
+  /* Custom properties */
+  --opacity: 0;
+  --pointer: none;
+  opacity: var(--opacity);
+  pointer-events: var(--pointer);
+  transition: all ease 0.2s;
+}
+.modal:target {
+  --opacity: 1;
+  --pointer: unset;
+}
+.modal:target .modal__container {
+  transform: scale(1);
+}
+
+.modal__container {
+  margin: auto;
+  background-color: #fff;
+  width: 90%;
+  max-width: 400px;
+  max-height: 90%;
+  overflow: hidden;
+  text-align: center;
+  padding: 2.5em 1.5em;
+  border-radius: 0.5em;
+  transition: all ease 0.2s;
+  transform: scale(0.9);
+}
+.modal__picture {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 400px;
+  margin-bottom: 2em;
+}
+.modal__img {
+  width: 100%;
+  display: block;
+}
+.modal__close {
+  display: inline-block;
+  padding: 0.5em 2em;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 5px;
+  color: white;
+  margin-top: 20px;
+  background-color: #3cb5a9;
+}
+.icon-modal {
+  font-size: 50px;
+  color: rgb(255, 189, 23);
+}
+@media (max-width: 1220px) {
+  #volver-atras {
+    top: 5px;
+    left: 5px;
+    padding-inline: 10px;
+    width: auto;
+  }
+
+  .slider-divs .imagenes-referencia {
+    height: 250px;
+    width: 30rem;
+  }
+
+  .imagenes-referencia .opcion {
+    top: 25%;
+    right: 4%;
+  }
+
+  .imagenes-referencia .check {
+    width: 100%;
+  }
+
+  .slider {
+    display: flex;
+    justify-content: center;
+  }
+
+  .slider-divs div {
+    flex-direction: column;
+  }
+
+  .slider-divs div .check {
+    height: 70px;
+  }
+
+  .slider-divs div .check svg {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .slider-divs .imagenes-referencia {
+    width: 25rem;
+  }
+
+  .controles a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #enviar-detalles {
+    margin: 20px 0px 0px 60px;
+    position: relative;
+    width: 260px;
+    display: none;
+  }
+}
+@media (max-width: 576px) {
+  .slider-divs .imagenes-referencia {
+    width: 90%;
+  }
+  .check h5 {
+    transform: translateX(-5%);
+  }
+}
